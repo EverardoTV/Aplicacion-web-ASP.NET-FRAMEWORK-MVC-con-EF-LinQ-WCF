@@ -223,6 +223,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Camiones\Index.cshtml" />
     <Content Include="Views\Camiones\Nuevo_Camion.cshtml" />
+    <Content Include="Views\Camiones\Editar_Camion.cshtml" />
+    <Content Include="Views\Shared\_SweetAlert.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,84 @@
+﻿@model DTO.Camiones_DTO
+@*Indicamos a Razor que utilizaremos un modelo especifico*@
+
+<h2>@ViewBag.Titulo</h2>
+
+@*Comenzamos a crear nuestro formulario*@
+@*HTML HELPER BeginForm es el HTML Helper que genera el código del formulario*@
+@*BeginForm("Método", "Controlador", Método del Protocolo, Especificamos al formulario que enviaremos informacion encriptada (imgs))*@
+
+@using (Html.BeginForm("Editar_Camion", "Camiones", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    //Comienzo el maquetado de mi formulario
+    <div class="row">
+        <div class="col-12">
+            <div>
+                @*Recuperar y enviar la informacion NO EDITABLE en 2do plano*@
+                @*esta informacion no se muestra en el formulario, pero es requisito para nuestro modelo*@
+                @Html.HiddenFor(model => model.UrlFoto)
+                @Html.HiddenFor(model => model.ID_Camion)
+            </div> 
+            <div>
+                @*Generamos la etiqueta Label*@
+                @Html.LabelFor(model => model.Matricula)
+                @*Generamos una etiqueta input*@
+                @Html.TextBoxFor(model => model.Matricula, new { @class = "form-control", @type = "text" })
+                @*Generamos un espacio para el msg de validacion*@
+                @Html.ValidationMessageFor(model => model.Matricula, null)
+            </div>
+            <div>
+                @*Generamos la etiqueta Label*@
+                @Html.LabelFor(model => model.Capacidad)
+                @*Generamos una etiqueta input*@
+                @Html.TextBoxFor(model => model.Capacidad, new { @class = "form-control", @type = "text" })
+                @*Generamos un espacio para el msg de validacion*@
+                @Html.ValidationMessageFor(model => model.Capacidad, null)
+            </div>
+            <div>
+                @*Generamos la etiqueta Label*@
+                @Html.LabelFor(model => model.Marca)
+                @*Generamos una etiqueta input*@
+                @Html.TextBoxFor(model => model.Marca, new { @class = "form-control", @type = "text" })
+                @*Generamos un espacio para el msg de validacion*@
+                @Html.ValidationMessageFor(model => model.Marca, null)
+            </div>
+            <div>
+                @*Generamos la etiqueta Label*@
+                @Html.LabelFor(model => model.Modelo)
+                @*Generamos una etiqueta input*@
+                @Html.TextBoxFor(model => model.Modelo, new { @class = "form-control", @type = "text" })
+                @*Generamos un espacio para el msg de validacion*@
+                @Html.ValidationMessageFor(model => model.Modelo, null)
+            </div>
+            <div>
+                @*Generamos la etiqueta Label*@
+                @Html.LabelFor(model => model.Kilometraje)
+                @*Generamos una etiqueta input*@
+                @Html.TextBoxFor(model => model.Kilometraje, new { @class = "form-control", @type = "text" })
+                @*Generamos un espacio para el msg de validacion*@
+                @Html.ValidationMessageFor(model => model.Kilometraje, null)
+            </div>
+            <div>
+                @*Generamos la etiqueta Label*@
+                @Html.LabelFor(model => model.Disponibilidad)
+                @Html.CheckBoxFor(model => model.Disponibilidad)
+            </div>
+            @*DDL Tipo de Camión*@
+            <div>
+                @Html.LabelFor(model => model.Tipo_Camion)
+                @*Generamos un DropDownList que se alimenta de la lista que pasamos por el ViewBag*@
+                @Html.DropDownListFor(model => model.Tipo_Camion, new SelectList(ViewBag.ListaTipos, "Descripcion", "Descripcion"), new { @class = "form-control" })
+            </div>
+            @*Imagen*@
+            <div>
+                @Html.LabelFor(model => model.UrlFoto)
+                <input type="file" name="imagen" id="imagen" />
+            </div>
+            @*Boton de guardar*@
+
+            <div style="text-align:right;">
+                <input value="Guardar" class="btn btn-success" type="submit" />
+            </div>
+        </div>
+    </div>
+}
