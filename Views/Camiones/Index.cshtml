@@ -1,0 +1,70 @@
+﻿@*Recupero el ViewBag*@
+@*para referenciar un método, una variable o un elemento de código utilizo '@'*@
+
+<h1>@ViewBag.Titulo</h1>
+<h1>@ViewBag.Subtitulo</h1>
+
+@*creo una tabla para mostrar mis camiones*@
+@*<table class="table table-bordered table-striped table-striped-columns table-responsive">
+    <thead>
+        <tr>
+            <th scope="col">ID_Camion</th>
+            <th scope="col">Matricula</th>
+            <th scope="col">Tipo_Camion</th>
+            <th scope="col">Marca</th>
+            <th scope="col">Modelo</th>
+            <th scope="col">Capacidad</th>
+            <th scope="col">Kilometraje</th>
+            <th scope="col">UrlFoto</th>
+            <th scope="col">Disponibilidad</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var camion in Model)
+            {
+                <tr>
+                    <td>@camion.ID_Camion</td>
+                    <td>@camion.Matricula</td>
+                    <td>@camion.Tipo_Camion</td>
+                    <td>@camion.Marca</td>
+                    <td>@camion.Modelo</td>
+                    <td>@camion.Capacidad</td>
+                    <td>@camion.Kilometraje</td>
+                    <td>@camion.UrlFoto</td>
+                    <td>@camion.Disponibilidad</td>
+                </tr>
+            }
+    </tbody>
+</table>*@
+
+<div class="row">
+    <div class="col-md-2" style="text-align:right;">
+        <a href="~/Camiones/Nuevo_Camion" class="btn btn-primary">Nuevo Camion</a>
+    </div>
+</div>
+
+<div class="col-md-12 row text-center">
+    @foreach (var camion in Model)
+            {
+               //Tarjeta de bootStrap
+             <div class="col-md-3 col-sm-12">
+                 <div class="card" style="width: 18rem;">
+                     <img src="@camion.UrlFoto" class="card-img-top" alt="@camion.UrlFoto" width="80" height="80">
+                     <div class="card-body">
+                         <h2 class="card-title">Camión no. @camion.ID_Camion</h2>
+                         <h5 class="card-title">@camion.Matricula</h5>
+                         <ul>
+                             <li class="card-text">@camion.Capacidad</li>
+                             <li class="card-text">@camion.Tipo_Camion</li>
+                             <li class="card-text">@camion.Marca</li>
+                             <li class="card-text">@camion.Modelo</li>
+                             <li class="card-text">@camion.Kilometraje</li>
+                             <li class="card-text">@camion.Disponibilidad</li>
+                         </ul>
+                         <a class="btn btn-warning" href="~/Camiones/Editar_Camion/@camion.ID_Camion">Editar</a>
+                         <a class="btn btn-danger" href="~/Camiones/Confirmar_Eliminar/@camion.ID_Camion">Eliminar</a>
+                     </div>
+                 </div>
+             </div>
+            }
+</div>
