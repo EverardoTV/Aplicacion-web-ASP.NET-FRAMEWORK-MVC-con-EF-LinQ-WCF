@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Transportes_MVC.Models.View_Rutas>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Salida)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LLegada_Estimada)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Origen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Destino)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Chofer)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Salida)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LLegada_Estimada)
+        </td>
+        <th>
+            @Html.DisplayFor(modelItem => item.Origen)
+        </th>
+        <th>
+            @Html.DisplayFor(modelItem => item.Destino)
+        </th>
+        <th>
+            @Html.DisplayFor(modelItem => item.Chofer)
+        </th>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

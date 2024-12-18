@@ -12,25 +12,26 @@ namespace Transportes_MVC.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Camiones
+    public partial class Direcciones
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Camiones()
+        public Direcciones()
         {
             this.Rutas = new HashSet<Rutas>();
+            this.Rutas1 = new HashSet<Rutas>();
         }
     
-        public int ID_Camion { get; set; }
-        public string Matricula { get; set; }
-        public string Tipo_Camion { get; set; }
-        public string Marca { get; set; }
-        public string Modelo { get; set; }
-        public int Capacidad { get; set; }
-        public double Kilometraje { get; set; }
-        public string UrlFoto { get; set; }
-        public bool Disponibilidad { get; set; }
+        public int ID_Direccion { get; set; }
+        public string Calle { get; set; }
+        public string Numero { get; set; }
+        public string Colonia { get; set; }
+        public string Ciudad { get; set; }
+        public string Estado { get; set; }
+        public string CP { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Rutas> Rutas { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Rutas> Rutas1 { get; set; }
     }
 }

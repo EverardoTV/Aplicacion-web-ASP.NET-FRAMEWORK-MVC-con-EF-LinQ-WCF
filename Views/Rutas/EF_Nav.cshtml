@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Transportes_MVC.Models.Rutas>
+
+<h2>@ViewBag.Titulo</h2>
+
+<table class="table table-bordered table-responsive table-striped table-striped-columns table-dark">
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.ID_Ruta)</th>
+        <th>@Html.DisplayNameFor(model => model.Fecha_salida)</th>
+        <th>@Html.DisplayNameFor(model => model.Fecha_llegadaestimada)</th>
+        @*A partir de estos elementos, comienzo a navegar entre tablas mediante sus declaraciones virtuales*@
+        <th>@Html.DisplayNameFor(model => model.Camiones.Matricula)</th>
+        <th>@Html.DisplayNameFor(model => model.Choferes.Nombre)</th>
+        <th>@Html.DisplayNameFor(model => model.Direcciones.Calle)</th>
+        <th>@Html.DisplayNameFor(model => model.Direcciones1.Calle)</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>@Html.DisplayFor(modelItem => item.ID_Ruta)</th>
+            <th>@Html.DisplayFor(modelItem => item.Fecha_salida)</th>
+            <th>@Html.DisplayFor(modelItem => item.Fecha_llegadaestimada)</th>
+            @*A partir de estos elementos, comienzo a navegar entre tablas mediante sus declaraciones virtuales*@   
+            <th>@Html.DisplayFor(modelItem => item.Camiones.Matricula)</th>
+            <th>@Html.DisplayFor(modelItem => item.Choferes.Nombre)</th>
+            <th>@Html.DisplayFor(modelItem => item.Direcciones.Calle)</th>
+            <th>@Html.DisplayFor(modelItem => item.Direcciones1.Calle)</th>
+        </tr>
+    }
+</table>
