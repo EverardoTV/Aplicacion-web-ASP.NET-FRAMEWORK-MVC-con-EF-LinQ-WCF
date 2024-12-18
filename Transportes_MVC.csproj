@@ -132,6 +132,7 @@
     <Compile Include="Controllers\CamionesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RutasController.cs" />
+    <Compile Include="Controllers\RutasEFController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -257,6 +258,11 @@
     <Content Include="Views\Rutas\Index.cshtml" />
     <Content Include="Views\Rutas\View_LinQ.cshtml" />
     <Content Include="Views\Rutas\EF_Nav.cshtml" />
+    <Content Include="Views\RutasEF\Create.cshtml" />
+    <Content Include="Views\RutasEF\Delete.cshtml" />
+    <Content Include="Views\RutasEF\Details.cshtml" />
+    <Content Include="Views\RutasEF\Edit.cshtml" />
+    <Content Include="Views\RutasEF\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

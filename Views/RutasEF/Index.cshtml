@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Transportes_MVC.Models.Rutas>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Distancia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fecha_salida)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fecha_llegadaestimada)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fecha_llegadareal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Camiones.Matricula)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Choferes.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Direcciones.Calle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Direcciones1.Calle)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Distancia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fecha_salida)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fecha_llegadaestimada)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fecha_llegadareal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Camiones.Matricula)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Choferes.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Direcciones.Calle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Direcciones1.Calle)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_Ruta }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_Ruta }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_Ruta })
+        </td>
+    </tr>
+}
+
+</table>

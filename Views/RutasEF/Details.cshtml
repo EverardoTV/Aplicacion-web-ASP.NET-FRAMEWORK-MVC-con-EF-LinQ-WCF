@@ -1,0 +1,82 @@
+﻿@model Transportes_MVC.Models.Rutas
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Rutas</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Distancia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Distancia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha_salida)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha_salida)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha_llegadaestimada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha_llegadaestimada)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha_llegadareal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha_llegadareal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Camiones.Matricula)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Camiones.Matricula)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Choferes.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Choferes.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Direcciones.Calle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Direcciones.Calle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Direcciones1.Calle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Direcciones1.Calle)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_Ruta }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
